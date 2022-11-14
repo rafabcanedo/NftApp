@@ -9,17 +9,17 @@ export function Button({ title, variant, ...rest}: Props){
  <ButtonNativeBase
   w="full"
   h={50}
-  bg={variant === "outline" ? "transparent" : "green.600"}
+  bg={variant === "outline" ? "transparent" : "orange.500"}
   borderWidth={variant === "outline" ? 1 : 0}
-  borderColor="green.500"
+  borderColor="orange.500"
   rounded="md"
   _pressed={{
-   bg: variant === "outline" ? "gray.500" : "green.400"
+   bg: variant === "outline" ? "gray.500" : "orange.700"
   }}
   {...rest}
  >
   <Text 
-   color={variant === "outline" ? "green.400" : "white"} 
+   color={variant === "outline" ? "orange.500" : "white"} 
    fontFamily="heading"
    fontSize="sm"
   >
