@@ -1,5 +1,8 @@
 import { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { VStack, HStack, FlatList, Heading, Text } from 'native-base';
+
+import { AppNavigationRoutesProps } from '../routes/app.routes';
 
 import { Group } from '../components/Group';
 import { HomeHeader } from '../components/HomeHeader';
@@ -11,6 +14,12 @@ export function Home() {
  const [nameNft, setNameNft] = useState(['Nft Mateca Gold', 'Nft Mateca Dark', 'Nft Mateca Orange']);
  const [groupSelected, setGroupSelected] = useState('common');
  
+ const navigation = useNavigation<AppNavigationRoutesProps>();
+
+ function handleOpenDetailsScreen(){
+  navigation.navigate('details');
+ }
+
  return (
   <VStack flex={1}>
    <HomeHeader />
@@ -47,7 +56,9 @@ export function Home() {
      data={nameNft}
      keyExtractor={item => item}
      renderItem={({ item }) => (
-     <NftCard />
+     <NftCard 
+      onPress={handleOpenDetailsScreen}
+     />
      )}
      showsHorizontalScrollIndicator={false}
      _contentContainerStyle={{ paddingBottom: 20}}

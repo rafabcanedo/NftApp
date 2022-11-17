@@ -1,6 +1,6 @@
 import { Heading, HStack, Image, Text, VStack, Icon } from 'native-base';
 import { TouchableOpacity, TouchableOpacityProps} from 'react-native';
-import { CaretRight } from 'phosphor-react-native';
+import { AntDesign } from '@expo/vector-icons';
 
 type Props = TouchableOpacityProps & {
 
@@ -31,7 +31,8 @@ export function NftCard({ ...rest }: Props) {
      </VStack>
 
      <Icon 
-      as={CaretRight}
+      as={AntDesign}
+      name="right"
       color="gray.300"
      />
     </HStack>

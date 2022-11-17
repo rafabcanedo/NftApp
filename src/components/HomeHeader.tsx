@@ -1,6 +1,6 @@
 import { Heading, HStack, Text, VStack, Icon } from 'native-base';
 import { TouchableOpacity } from 'react-native';
-import { SignOut } from 'phosphor-react-native';
+import { MaterialIcons } from '@expo/vector-icons';
 import { UserPhoto } from './UserPhoto';
 
 export function HomeHeader() {
@@ -25,7 +25,8 @@ export function HomeHeader() {
     
     <TouchableOpacity>
     <Icon 
-     as={SignOut}
+     as={MaterialIcons}
+     name="logout"
      color="gray.200"
      size={7}
     />
