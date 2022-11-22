@@ -1,10 +1,14 @@
 import { Heading, HStack, Image, Text, VStack, Icon } from 'native-base';
 import { TouchableOpacity, TouchableOpacityProps} from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
+import store from '../redux/store';
+import { productsFetch } from '../redux/productsSlice';
 
 type Props = TouchableOpacityProps & {
 
 };
+
+store.dispatch(productsFetch());
 
 export function NftCard({ ...rest }: Props) {
  return(
