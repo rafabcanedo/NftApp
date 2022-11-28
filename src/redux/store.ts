@@ -1,7 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from '../redux/userSlice';
-import { productsApi } from "./producstsApi";
+import { productsApi } from "./productsApi";
 import productsReducer from "./productsSlice";
+import store from '../redux/store';
+import { productsFetch } from '../redux/productsSlice';
 
 export default configureStore({
  reducer: {
@@ -9,4 +11,8 @@ export default configureStore({
   products: productsReducer,
   [productsApi.reducerPath]: productsApi.reducer,
  },
+ middleware: (getDefaultMiddleware) =>
+  getDefaultMiddleware().concat(productsApi.middleware),
 });
+
+store.dispatch(productsFetch());

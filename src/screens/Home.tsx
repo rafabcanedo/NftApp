@@ -14,12 +14,6 @@ export function Home() {
  const [nameNft, setNameNft] = useState(['Nft Mateca Gold', 'Nft Mateca Dark', 'Nft Mateca Orange']);
  const [groupSelected, setGroupSelected] = useState('common');
  
- const navigation = useNavigation<AppNavigationRoutesProps>();
-
- function handleOpenDetailsScreen(){
-  navigation.navigate('details');
- }
-
  return (
   <VStack flex={1}>
    <HomeHeader />
